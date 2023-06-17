@@ -1,26 +1,23 @@
 package com.shobhit.reactive;
 
-public class Exercise2 {
+import java.util.List;
+
+public class Exercise3 {
 	public static void main(String[] args) throws Exception {
 
-		//	Print fruit from fruitMono
-
-		ReactiveSources.getFruit()
-			.subscribe(System.out::println);
-
-
-		//	Print all fruits from fruitFlux
-
-		ReactiveSources.getFruits()
-			.subscribe(System.out::println);
-
-
-		//	Print all users from userFlux
+		//	Get all Users from a ReactiveSource userFlux and dump into a list
+		//	and print it.
 
 		ReactiveSources.getUsers()
-			.subscribe(System.out::println);
+			.toStream()
+			.forEach(System.out::println);
 
-		System.out.println("Press Any Key to Continue");
-		System.in.read();
+		List<User> users = ReactiveSources.getUsers()
+			.toStream()
+			.toList();
+
+		System.out.println("List - " + users);
+
+		System.out.println("Method Execution End");
 	}
 }
