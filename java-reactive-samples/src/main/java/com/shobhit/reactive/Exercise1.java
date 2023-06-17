@@ -43,7 +43,7 @@ public class Exercise1 {
 			.forEach(System.out :: println);
 
 
-		//	Print first name from usersStream of all users which Ids are in intNumbersStream
+		//	Print first name from usersStream of all users which IDs are in intNumbersStream
 
 		StreamSources.intNumbersStream()
 			.flatMap(id -> StreamSources.usersStream().filter(user -> user.getId() == id))
