@@ -1,4 +1,4 @@
-package com.shobhit.reactive;
+package com.shobhit.reactive.models;
 
 public class User {
 	private int id;
