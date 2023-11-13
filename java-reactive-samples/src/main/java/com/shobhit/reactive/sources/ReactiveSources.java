@@ -39,4 +39,12 @@ public class ReactiveSources {
 				.just(new User(101, "Shobhit"), new User(102, "Ravi"), new User(103, "Rajesh"))
 				.delayElements(Duration.ofSeconds(1));
 	}
+
+	public static Mono<String> unresponsiveMono() {
+		return Mono.never();
+	}
+
+	public static Flux<String> unresponsiveFlux() {
+		return Flux.never();
+	}
 }
